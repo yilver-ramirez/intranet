@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
 
 //angular materials
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -11,11 +14,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
   declarations: [],
   imports: [
+    NgOptimizedImage,
     CommonModule,
     MatSlideToggleModule,
     MatFormFieldModule,
@@ -25,9 +31,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    MatMenuModule,
+    MatTabsModule
   ],
   exports:[
+    NgOptimizedImage,
     MatSlideToggleModule,
     MatFormFieldModule,
     ReactiveFormsModule,
@@ -36,7 +46,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    MatMenuModule,
+    MatTabsModule
   ]
 })
 export class SharedModule { }

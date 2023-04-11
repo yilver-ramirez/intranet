@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UsuariosComponent } from './usuarios.component';
+import { MacroProcesosComponent } from './macro-procesos.component';
 
-describe('UsuariosComponent', () => {
-  let component: UsuariosComponent;
-  let fixture: ComponentFixture<UsuariosComponent>;
+describe('MacroProcesosComponent', () => {
+  let component: MacroProcesosComponent;
+  let fixture: ComponentFixture<MacroProcesosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsuariosComponent ]
+      declarations: [ MacroProcesosComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UsuariosComponent);
+    fixture = TestBed.createComponent(MacroProcesosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

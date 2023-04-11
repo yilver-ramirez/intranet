@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Inicio",
+        "redirect": "/dashboard",
+        "modulo": ""
+    },
+    {
+        "nombre": "Quienes Somos",
+        "redirect": "/dashboard/quienes-somos",
+        "modulo": ""
+    },
+    {
+        "nombre": "Procesos",
+        "redirect": "/dashboard/procesos",
+        "modulo": ""
+    },
+    {
+        "nombre": "SST",
+        "redirect": "/dashboard/sst",
+        "modulo": ""
+    },
+    {
+        "nombre": "Galería",
+        "redirect": "/dashboard/galeria",
+        "modulo": "galera"
+    }
+]
