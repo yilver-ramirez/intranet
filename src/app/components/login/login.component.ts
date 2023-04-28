@@ -4,6 +4,7 @@ import { Storage, ref, getDownloadURL } from '@angular/fire/storage';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { timeout } from 'rxjs';
 import { Router } from '@angular/router';
+import { LoginUserService } from 'src/app/services/login-user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,12 @@ export class LoginComponent {
   hide = true;
   loading = false;
 
-  constructor(private storage: Storage, private _snackBar: MatSnackBar, private router:Router) {
+  constructor(
+    private storage: Storage,
+    private _snackBar: MatSnackBar,
+    private router: Router,
+    private loginUser: LoginUserService
+  ) {
     this.image = '';
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -54,13 +60,17 @@ export class LoginComponent {
       const password = this.loginForm.value.password;
 
       console.log(`Email: ${email}, Password: ${password}`);
-      if (email == 'yilver@dfds.com') {
-        
-        this.fakeLoading();
-      } else {
-        this.error();
-        this.loginForm.reset();
-      }
+
+      this.loginUser.login(this.loginForm.value)
+        .then(Response => {
+          this.fakeLoading();
+        })
+        .catch(error => {
+          console.log(error);
+          this.error();
+          this.loginForm.reset()
+        });
+
     }
   }
 
@@ -82,5 +92,14 @@ export class LoginComponent {
         verticalPosition: 'top',
       });
     }, 800);
+  }
+
+  loginWithGoogle(){
+    this.loginUser.loginWithGoogle()
+      .then(response => {
+        console.log(response);
+        this.fakeLoading();
+      })
+      .catch(error => console.log(error));
   }
 }

@@ -1,9 +1,26 @@
-<mat-toolbar>
+<mat-toolbar >
     <span>Galería</span>
 </mat-toolbar>
 
-<mat-tab-group fitInkBarToContent>
+<!-- <mat-form-field>
+    <mat-label>Theme</mat-label>
+    <mat-select [(ngModel)]="selectedTheme" (ngModelChange)="setTheme()">
+        <mat-option *ngFor="let theme of themes" [value]="theme">{{ theme.primary }}/{{ theme.accent }}</mat-option>
+    </mat-select>
+</mat-form-field> -->
+<!-- <mat-form-field>
+    <mat-label>Theme</mat-label>
+    <mat-select (selectionChange)="onThemeChange($event)">
+      <mat-option *ngFor="let theme of themes" [value]="theme">
+        {{ theme.primary }}/{{ theme.accent }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+   -->
+
+<mat-tab-group fitInkBarToContent >
     <mat-tab label="Anuncios"><app-anuncios></app-anuncios></mat-tab>
     <mat-tab label="Eventos"><app-eventos></app-eventos></mat-tab>
     <mat-tab label="Logros"><app-logros></app-logros></mat-tab>
 </mat-tab-group>
+

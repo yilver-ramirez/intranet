@@ -3,7 +3,7 @@
 </div>
 <div *ngIf="!loading" class="body">
     <div class="login">
-        <form [formGroup]="loginForm" (ngSubmit)="ingresar()">
+        <form [formGroup]="loginForm">
             <img class="mt-3" [src]="image" width="50%">
             
             <h1>Login</h1>
@@ -21,7 +21,9 @@
                 </button>
             </mat-form-field>
             <button type="submit" class="mb-3 ancho btutt" mat-raised-button color="primary"
-                [disabled]="loginForm.invalid">Ingresar</button>
+                [disabled]="loginForm.invalid" (click)="ingresar()">Ingresar</button>
         </form>
+        
+        <button  class="mb-3 btn btn-danger" (click)="loginWithGoogle()"><i class="bi bi-google"></i> - Ingresar con google</button>
     </div>
-</div>
+   </div>

@@ -1,0 +1,13 @@
+@import "./theme-custom.scss";
+
+// Importar los estilos de Angular Material
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+// Generar los estilos para cada tema
+.light-theme {
+  @include angular-material-theme($light-theme);
+}
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+}

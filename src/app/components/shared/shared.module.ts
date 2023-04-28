@@ -16,6 +16,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+
+////angular materials cdk
+import {CdkMenuModule} from '@angular/cdk/menu';
+
 
 
 @NgModule({
@@ -34,7 +40,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatToolbarModule,
     HttpClientModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatCardModule,
+    CdkMenuModule
   ],
   exports:[
     NgOptimizedImage,
@@ -49,7 +58,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatToolbarModule,
     HttpClientModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatCardModule,
+    CdkMenuModule
   ]
 })
 export class SharedModule { }
